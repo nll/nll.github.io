@@ -4,7 +4,7 @@
   <title><![CDATA[Category: VNC | Nuno Luís]]></title>
   <link href="http://nll.github.io/blog/categories/vnc/atom.xml" rel="self"/>
   <link href="http://nll.github.io/"/>
-  <updated>2013-11-19T17:19:57+00:00</updated>
+  <updated>2013-11-19T19:56:33+00:00</updated>
   <id>http://nll.github.io/</id>
   <author>
     <name><![CDATA[Nuno Luís]]></name>
@@ -18,31 +18,41 @@
     <link href="http://nll.github.io/blog/2013/11/19/install-vnc-server-on-ubuntu-13-dot-04/"/>
     <updated>2013-11-19T02:34:10+00:00</updated>
     <id>http://nll.github.io/blog/2013/11/19/install-vnc-server-on-ubuntu-13-dot-04</id>
-    <content type="html"><![CDATA[<p>Install gnome failback</p>
+    <content type="html"><![CDATA[<p>With vnc server we can connect to a linux machine with desktop an environment. This method is not the more secure, but is very easy, and perfect for local networks. In addition allows each user to work in their area and create multiple remote displays.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install gnome-session-fallback
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>First install vncserver</p>
 
-<p>Install vncserver</p>
+<pre>
+sudo apt-get install vnc4server
+</pre>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install vnc4server
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Start the vncserver</p>
+<p>And then create one vnc display</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>vncserver
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<pre>
+vncserver
+</pre>
 
-<p>To stop the vncserver</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>vncserver -kill :1    <span class="c"># :1 is the display created in the previous command</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>(each time you run this command one new display is created, and in the first time, a password will be asked to restrict access)</p>
 
-<p>Edit the file <i>~/.vnc/xstartup</i> and change to this</p>
+<p>In the end will be displayed the display number, in this case <code>:1</code></p>
+
+<pre>
+New 'hostname:1 (username)' desktop is pc-hostname:1
+</pre>
+
+
+<p>To connect to this vnc display you can use any vnc client you like, taking into account that the port is according to your display, :1 will be 5901, :2 will be 5902, and so on&hellip;</p>
+
+<p>I choose to use gnome fallback to be my vnc desktop environment, and so I install gnome fallback</p>
+
+<pre>
+sudo apt-get install gnome-session-fallback
+</pre>
+
+
+<p>And edit the file <code>~/.vnc/xstartup</code> to this</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -89,6 +99,13 @@
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And finally to stop one vnc display server</p>
+
+<pre>
+vncserver -kill :1
+</pre>
+
 ]]></content>
   </entry>
   

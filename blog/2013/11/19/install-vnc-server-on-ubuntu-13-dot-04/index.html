@@ -7,9 +7,7 @@
 	<meta name="author" content="Nuno Luís">
 
 	
-	<meta name="description" content="Install gnome failback 1
-sudo apt-get install gnome-session-fallback Install vncserver 1
-sudo apt-get install vnc4server Start the vncserver 1 &hellip;">
+	<meta name="description" content="With vnc server we can connect to a linux machine with desktop an environment. This method is not the more secure, but is very easy, and perfect for &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -83,35 +81,41 @@ sudo apt-get install vnc4server Start the vncserver 1 &hellip;">
 	
 	<div id="content" class="inner"><article class="post">
 	<h2 class="title">Install VNC Server on Ubuntu 13.04</h2>
-	<div class="entry-content"><p>Install gnome failback</p>
+	<div class="entry-content"><p>With vnc server we can connect to a linux machine with desktop an environment. This method is not the more secure, but is very easy, and perfect for local networks. In addition allows each user to work in their area and create multiple remote displays.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install gnome-session-fallback
-</span></code></pre></td></tr></table></div></figure>
+<p>First install vncserver</p>
 
-
-<p>Install vncserver</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install vnc4server
-</span></code></pre></td></tr></table></div></figure>
+<pre>
+sudo apt-get install vnc4server
+</pre>
 
 
-<p>Start the vncserver</p>
+<p>And then create one vnc display</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>vncserver
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>To stop the vncserver</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>vncserver -kill :1    <span class="c"># :1 is the display created in the previous command</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre>
+vncserver
+</pre>
 
 
-<p>Edit the file <i>~/.vnc/xstartup</i> and change to this</p>
+<p>(each time you run this command one new display is created, and in the first time, a password will be asked to restrict access)</p>
+
+<p>In the end will be displayed the display number, in this case <code>:1</code></p>
+
+<pre>
+New 'hostname:1 (username)' desktop is pc-hostname:1
+</pre>
+
+
+<p>To connect to this vnc display you can use any vnc client you like, taking into account that the port is according to your display, :1 will be 5901, :2 will be 5902, and so on&hellip;</p>
+
+<p>I choose to use gnome fallback to be my vnc desktop environment, and so I install gnome fallback</p>
+
+<pre>
+sudo apt-get install gnome-session-fallback
+</pre>
+
+
+<p>And edit the file <code>~/.vnc/xstartup</code> to this</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -140,6 +144,11 @@ sudo apt-get install vnc4server Start the vncserver 1 &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
+<p>And finally to stop one vnc display server</p>
+
+<pre>
+vncserver -kill :1
+</pre>
 
 </div>
 
@@ -161,7 +170,7 @@ sudo apt-get install vnc4server Start the vncserver 1 &hellip;">
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/ubuntu/'>Ubuntu</a>, <a class='category' href='/blog/categories/vnc/'>VNC</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/ubuntu/'>Ubuntu</a>, <a class='category' href='/blog/categories/vnc/'>VNC</a>
 
 
 </div>
