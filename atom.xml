@@ -4,7 +4,7 @@
   <title><![CDATA[Nuno Luís]]></title>
   <link href="http://nll.github.io/atom.xml" rel="self"/>
   <link href="http://nll.github.io/"/>
-  <updated>2013-11-19T19:56:33+00:00</updated>
+  <updated>2013-11-19T22:52:34+00:00</updated>
   <id>http://nll.github.io/</id>
   <author>
     <name><![CDATA[Nuno Luís]]></name>
@@ -18,9 +18,7 @@
     <link href="http://nll.github.io/blog/2013/11/19/install-vnc-server-on-ubuntu-13-dot-04/"/>
     <updated>2013-11-19T02:34:10+00:00</updated>
     <id>http://nll.github.io/blog/2013/11/19/install-vnc-server-on-ubuntu-13-dot-04</id>
-    <content type="html"><![CDATA[<p>With vnc server we can connect to a linux machine with desktop an environment. This method is not the more secure, but is very easy, and perfect for local networks. In addition allows each user to work in their area and create multiple remote displays.</p>
-
-<p>First install vncserver</p>
+    <content type="html"><![CDATA[<p>First install vncserver</p>
 
 <pre>
 sudo apt-get install vnc4server
