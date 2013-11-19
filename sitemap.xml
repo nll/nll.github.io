@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://nll.github.io/blog/2013/11/19/install-vnc-server-on-ubuntu-13-dot-04/</loc>
+        <lastmod>2013-11-19T03:06:29+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://nll.github.io/blog/archives/</loc>
+        <lastmod>2013-11-19T03:06:29+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://nll.github.io/</loc>
+        <lastmod>2013-11-19T03:06:29+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://nll.github.io/robots.txt</loc>
+        <lastmod>2013-11-19T02:16:30+00:00</lastmod>
+    </url>
+</urlset>

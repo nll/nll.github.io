@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ubuntu | Nuno Luís]]></title>
+  <link href="http://nll.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://nll.github.io/"/>
+  <updated>2013-11-19T03:12:28+00:00</updated>
+  <id>http://nll.github.io/</id>
+  <author>
+    <name><![CDATA[Nuno Luís]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install VNC server on Ubuntu 13.04]]></title>
+    <link href="http://nll.github.io/blog/2013/11/19/install-vnc-server-on-ubuntu-13-dot-04/"/>
+    <updated>2013-11-19T02:34:10+00:00</updated>
+    <id>http://nll.github.io/blog/2013/11/19/install-vnc-server-on-ubuntu-13-dot-04</id>
+    <content type="html"><![CDATA[<p>Install gnome failback</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install gnome-session-fallback
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Install vncserver</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install vnc4server
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Start the vncserver</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>vncserver
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>To stop the vncserver</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>vncserver -kill :1    <span class="c"># :1 is the display created in the previous command</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Edit the file <i>~/.vnc/xstartup</i> and change to this</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;!/bin/sh&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Uncomment the following two lines <span class="k">for </span>normal desktop:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;unset SESSION_MANAGER&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;exec /etc/X11/xinit/xinitrc&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;gnome-session-fallback &amp;amp;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;<span class="o">[</span> -x /etc/vnc/xstartup <span class="o">]</span> &amp;amp;&amp;amp; <span class="nb">exec</span> /etc/vnc/xstartup
+</span><span class='line'><span class="o">[</span> -r <span class="nv">$HOME</span>/.Xresources <span class="o">]</span> &amp;amp;&amp;amp; xrdb <span class="nv">$HOME</span>/.Xresources
+</span><span class='line'>xsetroot -solid grey
+</span><span class='line'>vncconfig -iconic &amp;amp;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;x-terminal-emulator -geometry 80x24+10+10 -ls -title &amp;ldquo;<span class="nv">$VNCDESKTOP</span> Desktop&amp;rdquo; &amp;amp;&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;x-window-manager &amp;amp;&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>
