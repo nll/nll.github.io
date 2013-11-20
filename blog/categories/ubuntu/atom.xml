@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ubuntu | Nuno Luís]]></title>
   <link href="http://nll.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://nll.github.io/"/>
-  <updated>2013-11-19T23:52:22+00:00</updated>
+  <updated>2013-11-20T00:40:13+00:00</updated>
   <id>http://nll.github.io/</id>
   <author>
     <name><![CDATA[Nuno Luís]]></name>
@@ -32,25 +32,21 @@ vncserver
 </pre>
 
 
-<p>(each time you run this command one new display is created, and in the first time, a password will be asked to restrict access)</p>
-
-<p>In the end will be displayed the display number, in this case <code>:1</code></p>
+<p>The output will show the display number, in this case <code>:1</code></p>
 
 <pre>
 New 'hostname:1 (username)' desktop is pc-hostname:1
 </pre>
 
 
-<p>To connect to this vnc display you can use any vnc client you like, taking into account that the port is according to your display, :1 will be 5901, :2 will be 5902, and so on&hellip;</p>
-
-<p>I choose to use gnome fallback to be my vnc desktop environment, and so I install gnome fallback</p>
+<p>I chose gnome fallback to be my vnc desktop environment, and so I install</p>
 
 <pre>
 sudo apt-get install gnome-session-fallback
 </pre>
 
 
-<p>And edit the file <code>~/.vnc/xstartup</code> to this</p>
+<p>And edit the file <code>~/.vnc/xstartup</code> to be like this</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -98,7 +94,9 @@ sudo apt-get install gnome-session-fallback
 </span><span class='line'>&lt;p&gt;
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>And finally to stop one vnc display server</p>
+<p>Now you can connect to this vnc display using any vnc client, considering the fact that the display :1 is equivalent to tcp port 5901, and so on&hellip;</p>
+
+<p>Finally to stop the vnc display run</p>
 
 <pre>
 vncserver -kill :1
