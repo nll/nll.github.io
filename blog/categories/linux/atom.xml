@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Nuno Luís]]></title>
   <link href="http://nll.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://nll.github.io/"/>
-  <updated>2013-11-20T00:40:13+00:00</updated>
+  <updated>2014-01-07T22:50:11+00:00</updated>
   <id>http://nll.github.io/</id>
   <author>
     <name><![CDATA[Nuno Luís]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Android Studio Fedora 64 bits - Fix 'aapt' problem]]></title>
+    <link href="http://nll.github.io/blog/2013/11/20/android-studio-fedora-x64-aapt-no-such-file-or-directory/"/>
+    <updated>2013-11-20T11:58:15+00:00</updated>
+    <id>http://nll.github.io/blog/2013/11/20/android-studio-fedora-x64-aapt-no-such-file-or-directory</id>
+    <content type="html"><![CDATA[<p>When I try Android Studio 0.3.6 on Fedora 19 x64 I get a strange error</p>
+
+<pre>
+Cannot run program "/home/username/android-studio/android-sdk-linux/platform-tools/aapt": 
+  java.io.IOException: error=2, No such file or directory
+</pre>
+
+
+<p>But the file exists, however when I try to run</p>
+
+<pre>
+-bash: ./build-tools/android-4.4/aapt: /lib/ld-linux.so.2:
+   bad ELF interpreter: No such file or directory
+</pre>
+
+
+<p>The solution is to install the missing x86 libs</p>
+
+<pre>
+yum install libstdc++.i686 zlib.i686
+</pre>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Install VNC server on Ubuntu 13.04]]></title>

@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Nuno Luís</title>
+	<title>Android Studio Fedora 64 bits - Fix 'aapt' problem - Nuno Luís</title>
 	<meta name="author" content="Nuno Luís">
 
 	
@@ -79,18 +79,9 @@
 	
 		
 	
-	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/11/20/android-studio-fedora-x64-aapt-no-such-file-or-directory/">
-		
-			Android Studio Fedora 64 bits - Fix &#8216;aapt&#8217; problem</a>
-	</h2>
-	<div class="entry-content">
-		<p>When I try Android Studio 0.3.6 on Fedora 19 x64 I get a strange error</p>
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Android Studio Fedora 64 bits - Fix 'aapt' problem</h2>
+	<div class="entry-content"><p>When I try Android Studio 0.3.6 on Fedora 19 x64 I get a strange error</p>
 
 <pre>
 Cannot run program "/home/username/android-studio/android-sdk-linux/platform-tools/aapt": 
@@ -112,10 +103,7 @@ Cannot run program "/home/username/android-studio/android-sdk-linux/platform-too
 yum install libstdc++.i686 zlib.i686
 </pre>
 
-
-		
-		
-	</div>
+</div>
 
 
 <div class="meta">
@@ -143,116 +131,26 @@ yum install libstdc++.i686 zlib.i686
 </div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 		
-		<a href="/blog/2013/11/19/install-vnc-server-on-ubuntu-13-dot-04/">
 		
-			Install VNC server on Ubuntu 13.04</a>
-	</h2>
-	<div class="entry-content">
-		<p>First install vncserver</p>
-
-<pre>
-sudo apt-get install vnc4server
-</pre>
-
-
-<p>And then create one vnc display</p>
-
-<pre>
-vncserver
-</pre>
-
-
-<p>The output will show the display number, in this case <code>:1</code></p>
-
-<pre>
-New 'hostname:1 (username)' desktop is pc-hostname:1
-</pre>
-
-
-<p>I chose gnome fallback to be my vnc desktop environment, and so I install</p>
-
-<pre>
-sudo apt-get install gnome-session-fallback
-</pre>
-
-
-<p>And edit the file <code>~/.vnc/xstartup</code> to be like this</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/sh</span>
-</span><span class='line'><span class="c"># Uncomment the following two lines for normal desktop:</span>
-</span><span class='line'><span class="nb">unset </span>SESSION_MANAGER
-</span><span class='line'><span class="c">#exec /etc/X11/xinit/xinitrc</span>
-</span><span class='line'>gnome-session-fallback &amp;
-</span><span class='line'>
-</span><span class='line'><span class="o">[</span> -x /etc/vnc/xstartup <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">exec</span> /etc/vnc/xstartup
-</span><span class='line'><span class="o">[</span> -r <span class="nv">$HOME</span>/.Xresources <span class="o">]</span> <span class="o">&amp;&amp;</span> xrdb <span class="nv">$HOME</span>/.Xresources
-</span><span class='line'>xsetroot -solid grey
-</span><span class='line'>vncconfig -iconic &amp;
-</span><span class='line'><span class="c">#x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;</span>
-</span><span class='line'><span class="c">#x-window-manager &amp;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now you can connect to this vnc display using any vnc client, considering the fact that the display :1 is equivalent to tcp port 5901, and so on&hellip;</p>
-
-<p>Finally to stop the vnc display run</p>
-
-<pre>
-vncserver -kill :1
-</pre>
-
-
+		<a class="addthis_button_tweet"></a>
+		
 		
 		
 	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-19T02:34:10+00:00" pubdate data-updated="true">Nov 19<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/ubuntu/'>Ubuntu</a>, <a class='category' href='/blog/categories/vnc/'>VNC</a>
-
-
-</div>
 	
 </div>
-</article>
 
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
     Nuno Luís
@@ -271,7 +169,10 @@ vncserver -kill :1
       var disqus_shortname = 'nunoluis';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://nll.github.io/blog/2013/11/20/android-studio-fedora-x64-aapt-no-such-file-or-directory/';
+        var disqus_url = 'http://nll.github.io/blog/2013/11/20/android-studio-fedora-x64-aapt-no-such-file-or-directory/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
